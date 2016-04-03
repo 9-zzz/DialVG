@@ -39,10 +39,12 @@ end
 
 -- Infinite loop to take control over frame advancing.
 while true do
+  --if read_file("button.txt") ==  then
   if file_exists("button.txt") then
     button = read_file('button.txt')
     press_button(button)
-    -- os.remove('button.txt')
+    os.remove('button.txt')
+    --write_file ("button.txt", "")
   end
   emu.frameadvance() -- This essentially tells FCEUX to keep running.
 end
